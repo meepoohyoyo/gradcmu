@@ -3,30 +3,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+	}
+
 	public function index($page='home')
 	{
 		if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php'))
-        {
+		{
                 // Whoops, we don't have a page for that!
-                show_404();
-        }
+			show_404();
+		}
 
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('pages/'.$page, $data);
-        $this->load->view('templates/footer', $data);
+		$this->load->view('templates/header', $data);
+		$this->load->view('pages/'.$page, $data);
+		$this->load->view('templates/footer', $data);
 	}
 
 	public function view($page = 'home')
 	{
-        if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php'))
-        {
+		if ( ! file_exists(APPPATH.'views/pages/'.$page.'.php'))
+		{
                 // Whoops, we don't have a page for that!
-                show_404();
-        }
+			show_404();
+		}
 
-        if($page==='home'){
+		if($page==='home'){
         	$data['title'] = 'Home'; // Capitalize the first letter
         	$data['css'] = 'assets/css/blog.css';
         }
@@ -47,26 +52,45 @@ class Welcome extends CI_Controller {
         	$data['css'] = 'assets/css/clean-blog.min.css';
         }
         else{
-        $data['title'] = ucfirst($page);
+        	$data['title'] = 'other';
         }
 
-        $this->load->helper('url');
         $this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer', $data);
-	}
+    }
 
-	public function login()
-	{
-		$data['title'] = 'Login';
-        $data['css'] = 'assets/css/login.css';
+    public function login()
+    {
+    	$data['title'] = 'Login';
+    	$data['css'] = 'assets/css/login.css';
 
-        $this->load->library('database');
-        $this->load->library('session');
-        $this->load->helper('url');
-        
-        $this->load->view('templates/header', $data);
-        $this->load->view('pages/login', $data);
-        $this->load->view('templates/footer', $data);
-	}
+    	$this->load->helper(array('form'));
+    	$this->load->view('templates/header', $data);
+    	$this->load->view('pages/login', $data);
+    	$this->load->view('templates/footer', $data);
+    }
+
+    public function logout()
+    {
+    	$this->session->unset_userdata('logged_in');
+    	session_destroy();
+    	redirect('home', 'refresh');
+    }
+
+    public function admin()
+    {
+    	if($this->session->userdata('logged_in'))
+    	{
+    		$session_data = $this->session->userdata('logged_in');
+    		$data['username'] = $session_data['username'];
+    		$data['title'] = 'Admin';
+
+    		$this->load->view('admin', $data);
+    	}
+    	else
+    	{
+    		redirect('login', 'refresh');
+    	}
+    }
 }
