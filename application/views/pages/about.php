@@ -1,25 +1,56 @@
+<div class="container">
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('<?php echo base_url("assets/img/about-bg.jpg");?>')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>About Me</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae debitis nobis, quod sapiente qui voluptatum, placeat magni repudiandae accusantium fugit quas labore non rerum possimus, corrupti enim modi! Et.</p>
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>นายกสโมสรนักศึกษาบัณฑิตศึกษา</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-border-left" width="250" height="250"
+                    src="<?php echo base_url("assets/img/IMG_4971.jpg"); ?>"
+                    alt="">
+                </div>
+                <div class="col-md-6">
+                    <p>นายศุภกร วงศ์สุข นายกสโมสรนักศึกษาบัณฑิตศึกษา มหาวิทยาลัยเชียงใหม่ ปีการศึกษา 2559</p>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>คณะกรรมการ</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>John Smith
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>John Smith
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="<?php echo base_url("assets/img/Screenshot.png"); ?>" alt="">
+                    <h3>John Smith
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
     </div>
+    <!-- /.container -->

@@ -33,24 +33,29 @@ class Welcome extends CI_Controller {
 
 		if($page==='home'){
         	$data['title'] = 'Home'; // Capitalize the first letter
-        	$data['css'] = 'assets/css/blog.css';
+        	$data['css'] = 'assets/css/business-casual.css';
         }
         else if($page==='about'){
         	$data['title'] = 'About'; // Capitalize the first letter
-        	$data['css'] = 'assets/css/clean-blog.min.css';
+        	$data['css'] = 'assets/css/business-casual.css';
         }
         elseif ($page==='login') {
         	$data['title'] = 'Login'; // Capitalize the first letter
-        	$data['css'] = 'assets/css/login.css';
+        	$data['css'] = 'assets/css/business-casual.css';
         }
         elseif ($page==='contact') {
         	$data['title'] = 'Contact'; // Capitalize the first letter
-        	$data['css'] = 'assets/css/clean-blog.min.css';
+        	$data['css'] = 'assets/css/business-casual.css';
         }
         elseif ($page==='post') {
         	$data['title'] = 'Post'; // Capitalize the first letter
-        	$data['css'] = 'assets/css/clean-blog.min.css';
+        	$data['css'] = 'assets/css/business-casual.css';
         }
+        elseif ($page==='profile') {
+            $data['title'] = 'Profile'; // Capitalize the first letter
+            $data['css'] = 'assets/css/business-casual.css';
+        }
+
         else{
         	$data['title'] = 'other';
         }
@@ -93,4 +98,6 @@ class Welcome extends CI_Controller {
     		redirect('login', 'refresh');
     	}
     }
+
+ 
 }
